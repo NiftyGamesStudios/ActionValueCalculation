@@ -197,15 +197,13 @@ def Enter():
 # Initial display of stats
 PrintStats()
 
-# Flag to track previous Enter key state
-prev_enter_state = False
+# Wait for user input (empty for Enter, "quit" for Space)
+while True:
+    user_input = input("\n"+"Press Enter for the next turn, or type 'quit' to end: ")
 
-# Wait for Space key to end the code
-while not keyboard.is_pressed("space"):
-    # Check if Enter key is pressed and not pressed in the previous iteration
-    if keyboard.is_pressed("enter") and not prev_enter_state:
-        Enter()
+    if user_input.lower() == 'quit':
+        break
 
-    # Update the previous Enter key state
-    prev_enter_state = keyboard.is_pressed("enter")
+    # Simulate a turn on Enter key press
+    Enter()
 
