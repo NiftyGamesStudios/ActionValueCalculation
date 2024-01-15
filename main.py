@@ -1,6 +1,4 @@
 import random
-import keyboard
-import time
 
 ActionDuration = 150
 CycleCount = 1
